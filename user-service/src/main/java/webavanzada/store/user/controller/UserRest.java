@@ -27,6 +27,20 @@ public class UserRest {
     UserService userService;
     private BindingResult result;
 
+    @GetMapping
+    public ResponseEntity<List<User>> ListProduct(){
+        List<User> users = new ArrayList<>();
+        users = userService.findUserAll();
+        if(users.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }else{
+            return ResponseEntity.ok(users);
+        }
+
+    }
+
+
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<User> getUser(@PathVariable("id") long id) {
         log.info("Fetching User with id {}", id);
