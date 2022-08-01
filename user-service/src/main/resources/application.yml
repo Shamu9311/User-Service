@@ -42,8 +42,8 @@ spring:
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/user
-    username: postgres
-    password: 2611
+    username: webavanzada #postgres
+    password: webavanzada #
     driverClassName: org.postgresql.Driver
 
 logging:
