@@ -43,7 +43,7 @@ spring:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/user
     username: postgres
-    password:
+    password: 2611
     driverClassName: org.postgresql.Driver
 
 logging:

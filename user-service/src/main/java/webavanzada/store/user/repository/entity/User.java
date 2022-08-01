@@ -12,10 +12,11 @@ import javax.validation.constraints.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Long id;
 
     @NotEmpty(message = "El número de documento no puede ser vacío")
-    @Size( min = 10 , max = 10, message = "El tamaño del número de documento es 8")
+    @Size( min = 10 , max = 10, message = "El tamaño del número de documento es 10")
     @Column(name = "number_id" , unique = true ,length = 10, nullable = false)
     private String numberID;
 
@@ -32,7 +33,7 @@ public class User {
     private String sex;
 
     @NotEmpty(message = "La edad no puede ser vacío")
-    @Column(name = "age" , unique = true ,length = 3, nullable = false)
+    @Column(name = "age" ,length = 3, nullable = false)
     private String age;
 
     private String state;
