@@ -32,9 +32,8 @@ public class User {
     @Column(name="sex", nullable=false)
     private String sex;
 
-    @NotEmpty(message = "La edad no puede ser vacío")
-    @Column(name = "age" , nullable = false)
-    private String age;
+    @Positive(message = "La debe ser mayor que cero.")
+    private Integer age;
 
     private String state;
 }
