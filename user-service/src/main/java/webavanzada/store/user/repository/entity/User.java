@@ -33,7 +33,7 @@ public class User {
     private String sex;
 
     @NotEmpty(message = "La edad no puede ser vacío")
-    @Column(name = "age" ,length = 3, nullable = false)
+    @Column(name = "age" , nullable = false)
     private String age;
 
     private String state;
