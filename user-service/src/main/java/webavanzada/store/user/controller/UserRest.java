@@ -20,9 +20,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
+@CrossOrigin (origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RestController
 @RequestMapping("/user")
-@CrossOrigin (origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class UserRest {
     @Autowired
     UserService userService;
