@@ -22,13 +22,14 @@ import java.util.stream.Collectors;
 @Slf4j
 @RestController
 @RequestMapping("/user")
+@CrossOrigin (origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class UserRest {
     @Autowired
     UserService userService;
     private BindingResult result;
 
     @GetMapping
-    @CrossOrigin(origins = "*")
+    //@CrossOrigin(origins = "*")
     public ResponseEntity<List<User>> ListProduct(){
         List<User> users = new ArrayList<>();
         users = userService.findUserAll();
@@ -43,7 +44,7 @@ public class UserRest {
 
 
     @GetMapping(value = "/{id}")
-    @CrossOrigin(origins = "*")
+    //@CrossOrigin(origins = "*")
     public ResponseEntity<User> getUser(@PathVariable("id") long id) {
         log.info("Fetching User with id {}", id);
         User user = userService.getUser(id);
@@ -55,7 +56,7 @@ public class UserRest {
     }
 
     @PostMapping
-    @CrossOrigin(origins = "*")
+    //@CrossOrigin(origins = "*")
     public ResponseEntity<User> createUser(@Valid @RequestBody User user, BindingResult result) {
         this.result = result;
         log.info("Creating User : {}", user);
@@ -67,7 +68,7 @@ public class UserRest {
     }
 
     @PutMapping(value = "/{id}")
-    @CrossOrigin(origins = "*")
+    //@CrossOrigin(origins = "*")
     public ResponseEntity<?> updateUser(@PathVariable("id") long id, @RequestBody User user) {
         log.info("Updating User with id {}", id);
 
